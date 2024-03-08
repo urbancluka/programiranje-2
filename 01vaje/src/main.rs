@@ -24,6 +24,8 @@ type Date = (u32, u32, u32);
 /// Napišite funkcijo `iteracija(mut start: u32, fun: fn(u32) -> u32, cond: fn(u32) -> bool) -> u32`, ki sprejme iteracijsko funkcijo, zaustavitveni pogoj in začetno vrednost.
 /// Iteracijsko funkcijo zaporedoma uporablja, dokler za rezultat ne velja zaustavitveni pogoj, in vrne prvi rezultat, ki zadošča zaustavitvenemu pogoju.
 
+fn iteracija(mut start: u32, fun: fn(u32) -> u32, cond: fn(u32) -> bool) -> u32 {}
+
 /// ------------------------------------------------------------------------------------------------
 
 /// Napišite funkcijo, ki izračuna ničlo zvezne funkcije s pomočjo bisekcije.
@@ -45,7 +47,13 @@ fn bisekcija(mut a: f64, mut b: f64, fun: fn(f64) -> f64, prec: f64) -> f64 {
 /// Če uporabnik vpiše neveljavno število to ni napaka, program za pogoj aritmetičnega zaporedja upošteva samo veljavno vpisana števila.
 
 fn guessing_game() {
-    panic!("Not implemented");
+    let mut prev = read_number();
+    let mut last = read_number();
+    let diff = last - prev;
+    while (last - prev) == diff {
+        (prev, last) = (last, read_number());
+    }
+    println!("Zaporedje je imelo k={diff}, nov k pa je {}", last - prev)
 }
 
 /// ------------------------------------------------------------------------------------------------
@@ -80,9 +88,23 @@ fn ordered(arr: &[u32]) -> bool {
 
 /// ------------------------------------------------------------------------------------------------
 /// Urejanje z izbiranjem
-/// Napišite funkcijo `fn selection_sort(mut arr: [u32])`, ki uredi tabelo `arr` z uporabo algoritma urejanja z izbiranjem
+/// Napišite funkcijo `fn selection_sort(arr: &mut [u32])`, ki uredi tabelo `arr` z uporabo algoritma urejanja z izbiranjem
 
-fn selection_sort(mut arr: &[u32]) {}
+fn selection_sort(arr: &mut [u32]) {}
+
+/// ------------------------------------------------------------------------------------------------
+/// Napišite program, ki izpiše piramido višine `n` iz zvezdic
+
+fn pyramid(n: u32) {
+    panic!("Not implemented");
+}
+
+/// ------------------------------------------------------------------------------------------------
+/// Napišite program, ki izpiše piramido črk angleške abecede višine `n`, lahkom predpostavite, da bo n največ 26.
+///      A
+///    A B A
+///   A B C B A
+/// A B C D C B A
 
 fn main() {}
 
