@@ -49,8 +49,8 @@ enum Izraz {
     - `1 + (2 * 3)`
     - `(1 + 2) * 3`
     - `1 + 2 + 3`
-    - `a**2 + b**2`
-    - `a * a + b**2`
+    - `5**2 + 3**2`
+    - `5 * 5 + 4**2`
 1. Implementirajte metodo `eval`, ki izračuna vrednost izraza.
 1. Implementirajte metodo `collect`, ki vrne število konstant v izrazu.
 1. Implementirajte za izpisovanje `izpis`, ki vrne izraz v obliki `(a + b) * c`.
