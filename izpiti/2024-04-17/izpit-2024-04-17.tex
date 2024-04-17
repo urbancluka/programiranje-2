@@ -15,7 +15,7 @@
 
 \naloga[\tocke{15}]
 
-Za vsakega izmed spodnjih programov prika탑ite vse spremembe sklada in kopice, 훾e po탑enemo funkcijo \mintinline{rust}{main}.
+Za vsakega izmed spodnjih programov prika탑ite vse spremembe sklada in kopice, 훾e po탑enemo funkcijo \mintinline{rust}{main}. Za vsako spremembo ozna훾ite, po kateri vrstici v kodi se zgodi.
 
 \podnaloga
 \begin{minted}{rust}
@@ -27,13 +27,42 @@ Za vsakega izmed spodnjih programov prika탑ite vse spremembe sklada in kopice, �
   }
   fn main() {
     let m = 6;
-    println!("{}", f(m, m))
+    let n = g(m);
+    println!("{n}")
   }
 \end{minted}
 
 \podnaloga
+\begin{minted}{rust}
+  fn f(s: String) {
+    println!("{s}")
+  }
+  fn g(s: String) {
+    f(s)
+  }
+  fn main() {
+    let s1 = String::from("4");
+    let s2 = String::from("2");
+    g(s1);
+    println!("{s2}");
+  }
+\end{minted}
 
 \podnaloga
+\begin{minted}{rust}
+  fn f(s: &String) {
+    println!("{s}")
+  }
+  fn g(s: String) {
+    f(&s)
+  }
+  fn main() {
+    let s1 = String::from("4");
+    let s2 = String::from("2");
+    g(s1);
+    println!("{s2}");
+  }
+\end{minted}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
