@@ -13,7 +13,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\naloga[\tocke{15}]
+\naloga[\tocke{10}]
 
 Za vsakega izmed spodnjih programov prika탑ite vse spremembe sklada in kopice, 훾e po탑enemo funkcijo \mintinline{rust}{main}. Za vsako spremembo ozna훾ite, po kateri vrstici v kodi se zgodi.
 
@@ -41,10 +41,12 @@ Za vsakega izmed spodnjih programov prika탑ite vse spremembe sklada in kopice, �
     f(s)
   }
   fn main() {
-    let s1 = String::from("4");
     let s2 = String::from("2");
+    let s1 = String::from("4");
+    if true {
+      println!("{s2}");
+    }
     g(s1);
-    println!("{s2}");
   }
 \end{minted}
 
@@ -67,7 +69,29 @@ Za vsakega izmed spodnjih programov prika탑ite vse spremembe sklada in kopice, �
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\naloga[\tocke{35}]
+\naloga[\tocke{10}]
+
+Definirajmo tip mno탑ic \mintinline{rust}{Set<T>}. Dopolnite signature spodnjih metod. 훻e v dani prostor ni treba dopisati ni훾esar, ga pre훾rtajte.
+
+\podnaloga
+  \mintinline{rust}{fn contains(_____ self, x: ______) ________}, ki preveri, ali dana mno탑ica vsebuje element \mintinline{rust}{x}.
+
+\podnaloga
+  \mintinline{rust}{fn power_set(_____ self) ________}, ki vrne poten훾no mno탑ico dane mno탑ice.
+
+\podnaloga
+  \mintinline{rust}{fn intersection(_____ self, other: ______) ________}, ki izra훾una presek dveh mno탑ic.
+
+\podnaloga
+  \mintinline{rust}{fn add(_____ self, x: ______) ________}, ki v obstoje훾o mno탑ico doda element \mintinline{rust}{x}.
+
+\podnaloga
+  \mintinline{rust}{fn into_iter(_____ self) ________}, ki iz mno탑ice naredi iterator po njenih elementih.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\naloga[\tocke{30}]
 
 Za vsakega izmed spodnjih programov:
 \begin{enumerate}
