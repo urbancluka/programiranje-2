@@ -96,7 +96,7 @@ Definirajmo tip množic \mintinline{rust}{Set<T>}. Dopolnite signature spodnjih 
 Za vsakega izmed spodnjih programov:
 \begin{enumerate}
   \item razložite, zakaj Rust program zavrne;
-  \item pokažite primer nedefiniranega vedenja, ki ga Rust s tem prepreči (če ga);
+  \item pokažite primer morebitnega kasnejšega nedefiniranega vedenja, ki ga Rust s tem prepreči, oziroma navedite, da gre za omejenost jezika in da lahko program vedno varno uporabimo;
   \item program popravite tako, da bo veljaven in bo učinkovito dosegel prvotni namen.
 \end{enumerate}
 
@@ -145,13 +145,13 @@ fn main() {
 \podnaloga
 
 \begin{minted}{rust}
-fn g(s1: &mut String, s2: &String) -> () {
-    /// Poljubna koda, da je tip funkcije ustrezen
-}
-
-fn main() {
-    let mut s1 = String::from("1");
-    g(&mut s1, &s1);
+fn g<T>(x : &T, v: &Vec<T>) -> bool {
+    for y in v {
+      if x == y {
+        return true
+      }
+    }
+    return false
 }
 \end{minted}
 
