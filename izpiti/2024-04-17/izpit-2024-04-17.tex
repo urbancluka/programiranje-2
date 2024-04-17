@@ -1,7 +1,7 @@
-\documentclass[arhiv]{../izpit}
+\documentclass[arhiv]{izpit}
 \usepackage{fouriernc}
 \usepackage{xcolor}
-\usepackage{minted}
+\usepackage[outputdir=../]{minted}
 
 
 \begin{document}
@@ -74,19 +74,19 @@ Za vsakega izmed spodnjih programov prikažite vse spremembe sklada in kopice, �
 Definirajmo tip množic \mintinline{rust}{Set<T>}. Dopolnite signature spodnjih metod. Če v dani prostor ni treba dopisati ničesar, ga prečrtajte.
 
 \podnaloga
-  \mintinline{rust}{fn contains(_____ self, x: ______) ________}, ki preveri, ali dana množica vsebuje element \mintinline{rust}{x}.
+\mintinline{rust}{fn contains(_____ self, x: ______) ________}, ki preveri, ali dana množica vsebuje element \mintinline{rust}{x}.
 
 \podnaloga
-  \mintinline{rust}{fn power_set(_____ self) ________}, ki vrne potenčno množico dane množice.
+\mintinline{rust}{fn power_set(_____ self) ________}, ki vrne potenčno množico dane množice.
 
 \podnaloga
-  \mintinline{rust}{fn intersection(_____ self, other: ______) ________}, ki izračuna presek dveh množic.
+\mintinline{rust}{fn intersection(_____ self, other: ______) ________}, ki izračuna presek dveh množic.
 
 \podnaloga
-  \mintinline{rust}{fn add(_____ self, x: ______) ________}, ki v obstoječo množico doda element \mintinline{rust}{x}.
+\mintinline{rust}{fn add(_____ self, x: ______) ________}, ki v obstoječo množico doda element \mintinline{rust}{x}.
 
 \podnaloga
-  \mintinline{rust}{fn into_iter(_____ self) ________}, ki iz množice naredi iterator po njenih elementih.
+\mintinline{rust}{fn into_iter(_____ self) ________}, ki iz množice naredi iterator po njenih elementih.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -101,13 +101,58 @@ Za vsakega izmed spodnjih programov:
 \end{enumerate}
 
 \podnaloga
+\begin{minted}{rust}
+fn main() {
+    let v = vec![1, 2, 3];
+    for x in v {
+      v.push(x);
+    }
+}
+\end{minted}
+
+\podnaloga
+\begin{minted}{rust}
+enum T {
+    A,
+    B(T, u32, T),
+}
+\end{minted}
+
+\podnaloga
+\begin{minted}{rust}
+fn g(s1: &str, s2: &str) -> &str {
+    if s1.len() > s2.len() {
+        return s1;
+    } else {
+        return s2;
+    }
+}
+\end{minted}
 
 \podnaloga
 
-\podnaloga
+\begin{minted}{rust}
+fn g(s1: &String, s2: &String) -> () {
+    /// Poljubna koda, da je tip funkcije ustrezen
+}
+
+fn main() {
+    let mut s1 = String::from("1");
+    g(&mut s1, &s1);
+}
+\end{minted}
 
 \podnaloga
 
-\podnaloga
+\begin{minted}{rust}
+fn g(s1: &mut String, s2: &String) -> () {
+    /// Poljubna koda, da je tip funkcije ustrezen
+}
+
+fn main() {
+    let mut s1 = String::from("1");
+    g(&mut s1, &s1);
+}
+\end{minted}
 
 \end{document}
