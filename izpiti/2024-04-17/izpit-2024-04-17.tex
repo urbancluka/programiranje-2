@@ -15,9 +15,21 @@
 
 \naloga[\tocke{15}]
 
-Za vsakega izmed spodnjih programov prikažite vse spremembe sklada in kopice.
+Za vsakega izmed spodnjih programov prikažite vse spremembe sklada in kopice, če poženemo funkcijo \mintinline{rust}{main}.
 
 \podnaloga
+\begin{minted}{rust}
+  fn f(a: i32, b: i32) -> i32 {
+    a * b
+  }
+  fn g(x: i32) -> i32 {
+    f(x, x + 1)
+  }
+  fn main() {
+    let m = 6;
+    println!("{}", f(m, m))
+  }
+\end{minted}
 
 \podnaloga
 
