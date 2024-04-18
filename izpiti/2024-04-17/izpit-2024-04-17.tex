@@ -1,7 +1,7 @@
-\documentclass[arhiv]{izpit}
+\documentclass[arhiv]{../izpit}
 \usepackage{fouriernc}
 \usepackage{xcolor}
-\usepackage[outputdir=../]{minted}
+\usepackage{minted}
 
 
 \begin{document}
@@ -95,8 +95,7 @@ Definirajmo tip množic \mintinline{rust}{Set<T>}. Dopolnite signature spodnjih 
 
 Za vsakega izmed spodnjih programov:
 \begin{enumerate}
-  \item razložite, zakaj Rust program zavrne;
-  \item pokažite primer morebitnega kasnejšega nedefiniranega vedenja, ki ga Rust s tem prepreči, oziroma navedite, da gre za omejenost jezika in da lahko program vedno varno uporabimo;
+  \item razložite, zakaj in s kakšnim namenom Rust program zavrne;
   \item program popravite tako, da bo veljaven in bo učinkovito dosegel prvotni namen.
 \end{enumerate}
 
@@ -112,15 +111,15 @@ fn main() {
 
 \podnaloga
 \begin{minted}{rust}
-enum T {
-    A,
-    B(T, u32, T),
+enum Drevo {
+    Prazno,
+    Sestavljeno(Drevo, u32, Drevo),
 }
 \end{minted}
 
 \podnaloga
 \begin{minted}{rust}
-fn g(s1: &str, s2: &str) -> &str {
+fn daljsi_niz(s1: &str, s2: &str) -> &str {
     if s1.len() > s2.len() {
         return s1;
     } else {
@@ -145,7 +144,7 @@ fn main() {
 \podnaloga
 
 \begin{minted}{rust}
-fn g<T>(x : &T, v: &Vec<T>) -> bool {
+fn vsebuje<T>(v: &Vec<T>, x : &T) -> bool {
     for y in v {
       if x == y {
         return true
