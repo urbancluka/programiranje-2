@@ -1,0 +1,177 @@
+\documentclass[11pt]{../izpit}
+\usepackage{fouriernc}
+\usepackage{xcolor}
+\usepackage{minted}
+\usemintedstyle{xcode}
+
+\begin{document}
+
+\izpit[ucilnica=311, naloge=-1]{Programiranje 2: 1. pisni izpit}{26.\ april 2024}{
+  Čas reševanja je 60 minut.
+  Veliko uspeha!
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\naloga[\tocke{10}]
+
+Za vsakega izmed spodnjih programov prikažite vse spremembe sklada in kopice, če poženemo funkcijo \mintinline{rust}{main}. Za vsako spremembo označite, po kateri vrstici v kodi se zgodi.
+
+\podnaloga
+\begin{minted}[linenos]{rust}
+fn f(c: u32) -> u32 {
+    c + c
+}
+fn main() {
+    let a = 10;
+    let b = 20;
+    let d = f(b) + a;
+    println!("{d}");
+}
+\end{minted}
+
+\podnaloga
+\begin{minted}[linenos]{rust}
+fn f(c: u32) -> u32 {
+    println!("{c}");
+    c * 10
+}
+fn g(d: u32) -> (u32, u32) {
+    (f(10), d)
+}
+fn main() {
+    let a = 10;
+    let b = 20;
+    let mut c = 3;
+    if a > b {
+        c = 10;
+    }
+    let e = g(c);
+    println!("{:?}", e);
+}
+\end{minted}
+
+\podnaloga
+\begin{minted}[linenos]{rust}
+fn g(a: &String) -> usize {
+    a.len()
+}
+fn f(mut b: String) -> String {
+    println!("{}", g(&b));
+    b.push('!');
+    b
+}
+fn main() {
+    let m = String::from("Abeceda");
+    let n = f(m);
+    println!("{n}")
+}
+\end{minted}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\naloga[\tocke{10}]
+
+Definirajmo tip sklada \mintinline{rust}{Stack<T>}, ki ob dodajanju in jemanju elementov \emph{prevzame in vrne lastništvo}, hkrati pa omogoča vpogled, ki ne prenese lastništva. 
+
+Dopolnite signaturo spodnje implementacije. Če v dani prostor ni treba dopisati ničesar, ga prečrtajte.
+
+{\Large
+\begin{minted}{rust}
+    impl<T ____________> Stack<T> {
+
+    fn contains(________ self, elt: ________) ________ {
+        // preveri, ali sklad vsebuje dani element
+    }
+    
+    fn elements(________ self) ________ {
+        // vrne vektor referenc na elemente sklada
+    }
+    
+    fn push(________ self, elt: ________) ________ {
+        // na vrh sklada doda element
+    }
+    
+    fn pop(________ self) ________ {
+        // z vrha odstrani element in ga vrne
+    }
+    
+    fn peek(________ self) ________ {
+        // na vpogled vrne zgornji element na skladu
+    }
+
+}
+\end{minted}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\naloga[\tocke{30}]
+Za vsakega izmed spodnjih programov:
+\begin{enumerate}
+  \item razložite, zakaj in s kakšnim namenom Rust program zavrne;
+  \item program popravite tako, da bo veljaven in bo učinkovito dosegel prvotni namen.
+\end{enumerate}
+
+\podnaloga
+\begin{minted}{rust}
+fn main() {
+    let a = 0;
+    for x in 1..10 {
+        a += x;
+    }
+}
+\end{minted}
+
+\podnaloga
+\begin{minted}{rust}
+fn main() {
+    let trojica = (String::from("1"), String::from("2"), String::from("3"));
+    let zadnji = trojica.2;
+    println!("{:?}", trojica);
+    println!("{zadnji}");
+}
+\end{minted}
+
+\podnaloga
+\begin{minted}{rust}
+fn sestej(a: Option<u32>, b: Option<u32>) -> u32 {
+    match (a,b) {
+        (Some(a), Some(b)) => a + b,
+        (Some(a), None) => a,
+        (None, Some(b)) => b
+    }
+}
+\end{minted}
+
+\podnaloga
+
+\begin{minted}{rust}
+fn vecji(b1: &Box<u32>, b2: &Box<u32>) -> &Box<u32> {
+    if b1 > b2 {
+        return b1;
+    } else {
+        return b2;
+    }
+}
+\end{minted}
+
+\podnaloga
+
+\begin{minted}{rust}
+fn stevilo_manjsih<T>(v: &Vec<T>, x : &T) -> u32 {
+    let c = 0;
+    for y in v {
+        if x > y {
+            c += 1;
+        }
+    }
+    c
+}
+\end{minted}
+
+
+\end{document}
