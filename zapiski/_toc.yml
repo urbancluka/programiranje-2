@@ -1,6 +1,0 @@
-format: jb-book
-root: 00-uvod.md
-parts:
-- caption: Rust
-  chapters:
-  - file: 03-obicajni-programski-koncepti.ipynb
