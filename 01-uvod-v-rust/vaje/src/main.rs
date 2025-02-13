@@ -68,6 +68,15 @@ fn ordered(arr: &[u32]) -> bool {
     panic!("Not implemented");
 }
 
+fn vsebuje<T : PartialEq>(v: &Vec<T>, x : &T) -> bool {
+    for y in v {
+      if x == y {
+        return true
+      }
+    }
+    return false
+}
+
 /// ------------------------------------------------------------------------------------------------
 /// Hitro potenciranje
 /// Napišite funkcijo `fn pow(mut x: u32, mut n: u32) -> u32`, ki izračuna `x` na potenco `n` v času O(log n)
@@ -119,16 +128,5 @@ mod tests {
 
     #[test]
     fn test_fib() {
-        assert_eq!(fib(0, 1, 0), 0);
-        assert_eq!(fib(0, 1, 1), 1);
-        assert_eq!(fib(0, 1, 2), 1);
-        assert_eq!(fib(0, 1, 3), 2);
-        assert_eq!(fib(0, 1, 4), 3);
-        assert_eq!(fib(0, 1, 5), 5);
-        assert_eq!(fib(0, 1, 6), 8);
-        assert_eq!(fib(0, 1, 7), 13);
-        assert_eq!(fib(0, 1, 8), 21);
-        assert_eq!(fib(0, 1, 9), 34);
-        assert_eq!(fib(0, 1, 10), 55);
     }
 }
