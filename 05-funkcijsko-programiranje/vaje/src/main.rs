@@ -32,7 +32,7 @@ pub fn capitalize_words_string(words: &[&str]) -> String {
 // Namig: fold, reduce, `..`...
 
 // -------------------------------------------------------------------------------------------------
-/// Dodatno:
+// Dodatno:
 // Koda vzeta iz googlvih rust vaj:
 // Vse se da lepo narediti samo z iteratorji (brez indeksov, brez for zank, brez mutabilnosti)
 /*
