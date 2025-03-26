@@ -223,19 +223,15 @@ use AritmeticnoZaporedje as AP;
 //     }
 // }
 
-
-#[derive(Debug)]
 enum BinOperacija {
     Plus,
     Minus,
     Times,
 }
-#[derive(Debug)]
 enum Izraz {
     Konstanta(u32),
     Operacija(Box<Izraz>, BinOperacija, Box<Izraz>),
 }
-
 
 impl Izraz {
 
